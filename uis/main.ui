@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>608</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_20">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Список машин</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="carsInput"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="findCar">
+            <property name="text">
+             <string>Искать</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListWidget" name="carsList"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Создание:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Имя</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="carName"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Литраж</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="vEngine"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Тип</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="carType">
+            <item>
+             <property name="text">
+              <string>Внедорожник</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Пикап</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Хетчбэк</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Лимузин</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Купэ</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Седан</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Универсал</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Кабриолет</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Привод</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="privod">
+            <item>
+             <property name="text">
+              <string>Передний</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Задний</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Полный</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Коробка</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="boxType">
+            <item>
+             <property name="text">
+              <string>Автомат</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Механика</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
+          <item>
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>Производитель</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="creator">
+            <property name="text">
+             <string>BMW</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="createColor">
+          <property name="text">
+           <string>Цвет</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="create_b">
+          <property name="text">
+           <string>Создать</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Информация</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLineEdit" name="editName"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="editNameB">
+            <property name="text">
+             <string>Изменить имя</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="infoBrowser"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <item>
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Цвет</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="colorBrowser">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Двери</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="moveRight">
+          <property name="text">
+           <string>Открыть/закрыть правую</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="moveLeft">
+          <property name="text">
+           <string>Открыть/закрыть левую</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Поворотники</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="turnRight">
+          <property name="text">
+           <string>Включить/выключить правый</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="turnLeft">
+          <property name="text">
+           <string>Включить/выключить левый</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Изменение данных</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QDoubleSpinBox" name="vEngineEdit"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="vEngineEditB">
+            <property name="text">
+             <string>Изменить литраж</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QComboBox" name="carTypeEdit">
+            <item>
+             <property name="text">
+              <string>Внедорожник</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Пикап</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Хетчбэк</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Лимузин</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Купэ</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Седан</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Универсал</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Кабриолет</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="carTypeEditB">
+            <property name="text">
+             <string>Изменить тип</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QComboBox" name="privodEdit">
+            <item>
+             <property name="text">
+              <string>Передний</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Задний</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Полный</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="privodEditB">
+            <property name="text">
+             <string>Изменить привод</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QComboBox" name="boxTypeEdit">
+            <item>
+             <property name="text">
+              <string>Автомат</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Механика</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="boxTypeEditB">
+            <property name="text">
+             <string>Изменить коробку</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLineEdit" name="creatorEdit">
+            <property name="text">
+             <string>BMW</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="creatorEditB">
+            <property name="text">
+             <string>Изменить производителя</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="colorEdit">
+          <property name="text">
+           <string>Изменить цвет</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteB">
+          <property name="text">
+           <string>Удалить</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
