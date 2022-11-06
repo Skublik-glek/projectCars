@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>608</height>
+    <height>890</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -79,6 +79,16 @@
            <widget class="QLineEdit" name="carName"/>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Стоимость</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="money"/>
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -312,16 +322,30 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="moveRight">
+         <widget class="QPushButton" name="moveRightFront">
           <property name="text">
-           <string>Открыть/закрыть правую</string>
+           <string>Открыть/закрыть правую переднюю</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="moveLeft">
+         <widget class="QPushButton" name="moveLeftFront">
           <property name="text">
-           <string>Открыть/закрыть левую</string>
+           <string>Открыть/закрыть левую переднюю</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="moveRightBack">
+          <property name="text">
+           <string>Открыть/закрыть правую заднюю</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="moveLeftBack">
+          <property name="text">
+           <string>Открыть/закрыть левую заднюю</string>
           </property>
          </widget>
         </item>
@@ -350,6 +374,16 @@
          <widget class="QLabel" name="label_4">
           <property name="text">
            <string>Изменение данных</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="moneyEdit"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="moneyEditB">
+          <property name="text">
+           <string>Изменить стоимость</string>
           </property>
          </widget>
         </item>
@@ -537,7 +571,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
