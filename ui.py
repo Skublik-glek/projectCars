@@ -18,8 +18,10 @@ class Main(QMainWindow):
         self.create_b.clicked.connect(self.create_car)
         self.findCar.clicked.connect(self.get_car_info)
         self.editNameB.clicked.connect(self.edit_name)
-        self.moveRight.clicked.connect(self.move_door)
-        self.moveLeft.clicked.connect(self.move_door)
+        self.moveRightFront.clicked.connect(self.move_door)
+        self.moveLeftFront.clicked.connect(self.move_door)
+        self.moveRightBack.clicked.connect(self.move_door)
+        self.moveLeftBack.clicked.connect(self.move_door)
         self.turnRight.clicked.connect(self.turner)
         self.turnLeft.clicked.connect(self.turner)
 
@@ -28,6 +30,7 @@ class Main(QMainWindow):
         self.privodEditB.clicked.connect(self.changer)
         self.boxTypeEditB.clicked.connect(self.changer)
         self.creatorEditB.clicked.connect(self.changer)
+        self.moneyEditB.clicked.connect(self.changer)
         self.colorEdit.clicked.connect(self.changer)
         self.deleteB.clicked.connect(self.delete)
 
@@ -38,7 +41,7 @@ class Main(QMainWindow):
     def create_car(self):
         if self.carName.text() != "":
             if Tools.check_name(self.carName.text()):
-                new_car = Car(self.carName.text(), self.carType.currentText(), self.creator.text(),
+                new_car = Car(self.carName.text(), self.carType.currentText(), self.creator.text(), self.money.text(),
                             str(self.color.name()), self.privod.currentText(), self.boxType.currentText(), self.vEngine.value())
                 self.update_car_list()
             else:
@@ -91,7 +94,7 @@ class Main(QMainWindow):
                 else:
                     car = Car()
                     car.restore(self.old_name)
-                new_car = Car(self.editName.text(), car.type, car.creator,
+                new_car = Car(self.editName.text(), car.type, car.creator, car.money,
                               car.color, car.privod, car.box_type, car.v_engine)
                 new_car.rotators_status = car.rotators_status
                 new_car.door_status = car.door_status
@@ -108,10 +111,14 @@ class Main(QMainWindow):
 
     def move_door(self):
         if self.old_name != "":
-            if self.sender().text() == "Открыть/закрыть правую":
+            if self.sender().text() == "Открыть/закрыть правую переднюю":
                 index = 1
-            else:
+            if self.sender().text() == "Открыть/закрыть левую переднюю":
                 index = 0
+            if self.sender().text() == "Открыть/закрыть правую заднюю":
+                index = 3
+            if self.sender().text() == "Открыть/закрыть левую заднюю":
+                index = 2
             car = Tools.get_correct_car_object(self.old_name)
             car.open_door(index)
             self.get_car_info(self.old_name)
@@ -143,6 +150,9 @@ class Main(QMainWindow):
             elif self.sender().text() == "Изменить производителя":
                 car: Car = Tools.get_correct_car_object(self.old_name)
                 car.creator = self.creatorEdit.text()
+            elif self.sender().text() == "Изменить стоимость":
+                car: Car = Tools.get_correct_car_object(self.old_name)
+                car.money = self.moneyEdit.text()
             elif self.sender().text() == "Изменить цвет":
                 car: Car = Tools.get_correct_car_object(self.old_name)
                 self.create_color(edit=True)

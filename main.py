@@ -5,15 +5,16 @@ from unicodedata import name
 
 
 class Car():
-    def __init__(self, name="", type=0, creator=0, color=0, privod=0, box_type=0, v_engine=0):
+    def __init__(self, name="", type=0, creator=0, money=0, color=0, privod=0, box_type=0, v_engine=0):
         self.name = str(name)
         self.type = type
         self.creator = creator
         self.color = color
+        self.money = money
         self.privod = privod
         self.box_type = box_type
-        self.door_status = ["closed", "closed", "closed", "closed"]
-        self.rotators_status = ["not_work", "not_work"]
+        self.door_status = ["открыта", "открыта", "открыта", "открыта"]
+        self.rotators_status = ["не работает", "не работает"]
         self.v_engine = v_engine
         if name != "":
             self.save()
@@ -22,32 +23,33 @@ class Car():
     def get_info(self):
         return [f"""Имя: {self.name}
 Тип машины {self.type}
+Стоимость: {self.money}
 Производитель: {self.creator}
 Привод: {self.privod}
 Тип коробки: {self.box_type}
 Объем двигателя: {float(self.v_engine)}
 Статус дверей:
-    Левая передняя: {self.door_status[0]}
     Правая передняя: {self.door_status[1]}
-    Левая задняя: {self.door_status[2]}
+    Левая передняя: {self.door_status[0]}
     Правая задняя: {self.door_status[3]}
+    Левая задняя: {self.door_status[2]}
 Статус поворотников:
     Левый: {self.rotators_status[0]}
     Правый: {self.rotators_status[1]}
 """, f"<font color='{self.color}' size = 21 >▉</font>"]
 
     def open_door(self, door_index: int):
-        if self.door_status[door_index] == "open":
-            self.door_status[door_index] = "close"
+        if self.door_status[door_index] == "открыта":
+            self.door_status[door_index] = "закрыта"
         else:
-            self.door_status[door_index] = "open"
+            self.door_status[door_index] = "открыта"
         self.save()
 
     def activate_rotator(self, rotator_index: int):
-        if self.rotators_status[rotator_index] == "work":
-            self.rotators_status[rotator_index] = "not_work"
+        if self.rotators_status[rotator_index] == "работает":
+            self.rotators_status[rotator_index] = "не работает"
         else:
-            self.rotators_status[rotator_index] = "work"
+            self.rotators_status[rotator_index] = "работает"
         self.save()
 
     def restore(self, name):
@@ -56,6 +58,7 @@ class Car():
             self.name = car["name"]
             self.type = car["type"]
             self.creator = car["creator"]
+            self.money = car["money"]
             self.color = car["color"]
             self.privod = car["privod"]
             self.box_type = car["box_type"]
@@ -71,6 +74,7 @@ class Car():
                 "type": self.type,
                 "creator": self.creator,
                 "color": self.color,
+                "money": self.money,
                 "privod": self.privod,
                 "box_type": self.box_type,
                 "door_status": self.door_status,
